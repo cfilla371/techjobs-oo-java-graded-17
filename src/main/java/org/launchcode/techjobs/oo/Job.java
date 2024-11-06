@@ -99,14 +99,14 @@ public class Job {
         else return value;
     }
 
-    public static String toString(Job job){
+    public  String toString(){
 
-      int id = job.getId();
-        String name = checkForBlank(job.getName());
-        String employer = checkForBlank(job.getEmployer().getValue());
-        String location = checkForBlank(job.getLocation().getValue());
-        String positionType = checkForBlank(job.getPositionType().getValue());
-        String coreCompetency = checkForBlank(job.getCoreCompetency().getValue());
+      int id = this.getId();
+        String name = checkForBlank(this.getName());
+        String employer = checkForBlank(this.getEmployer().getValue());
+        String location = checkForBlank(this.getLocation().getValue());
+        String positionType = checkForBlank(this.getPositionType().getValue());
+        String coreCompetency = checkForBlank(this.getCoreCompetency().getValue());
 
         String printJob = String.format(System.lineSeparator() +
                 "ID: %d" + System.lineSeparator() +
@@ -114,8 +114,8 @@ public class Job {
                 "Employer: %s" + System.lineSeparator() +
                 "Location: %s" + System.lineSeparator() +
                 "Position Type: %s" + System.lineSeparator() +
-                "Core Competency: %s" + System.lineSeparator() +
-                System.lineSeparator(),id, name, employer, location, positionType, coreCompetency
+                "Core Competency: %s" + System.lineSeparator(),
+                id, name, employer, location, positionType, coreCompetency
         );
 
         return printJob;

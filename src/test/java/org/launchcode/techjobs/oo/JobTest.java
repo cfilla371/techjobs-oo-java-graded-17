@@ -48,15 +48,15 @@ public class JobTest {
     @Test
     public void testToStringStartsAndEndsWithNewLine(){
         Job tJob = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
-        Job.toString(tJob).startsWith(System.lineSeparator());
-        Job.toString(tJob).endsWith(System.lineSeparator());
+        tJob.toString().startsWith(System.lineSeparator());
+        tJob.toString().endsWith(System.lineSeparator());
 
     }
     @Test
     public void testToStringContainsCorrectLabelsAndData(){
         Job tJob = new Job("Product tester", new Employer("ACME"), new Location("Peru"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
 
-        String tString =  Job.toString(tJob);
+        String tString =  tJob.toString();
 
         tString.contains("Job: Product tester");
         tString.contains("Employer: ACME");
@@ -68,7 +68,7 @@ public class JobTest {
     @Test
     public void testToStringHandlesEmptyField(){
         Job tJob= new Job(" ", new Employer(" "), new Location(" " ), new PositionType(" "), new CoreCompetency(" "));
-      String tString = Job.toString(tJob);
+      String tString = tJob.toString();
         tString.contains("Job: Data not available");
         tString.contains("Employer: Data not available");
         tString.contains("Location: Data not available");
